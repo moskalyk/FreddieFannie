@@ -201,7 +201,7 @@ CREATE TABLE hpi_indexes (
   first_date date
 );
 
-COPY hpi_indexes FROM '../data/hpi_index_codes.txt' DELIMITER '|' NULL '';
+COPY hpi_indexes FROM 'data/hpi_index_codes.txt' DELIMITER '|' NULL '';
 
 CREATE TABLE hpi_values (
   hpi_index_id integer,
@@ -210,7 +210,7 @@ CREATE TABLE hpi_values (
   PRIMARY KEY (hpi_index_id, date)
 );
 
-COPY hpi_values FROM '../data/interpolated_hpi_values.txt' DELIMITER '|' NULL '';
+COPY hpi_values FROM 'data/interpolated_hpi_values.txt' DELIMITER '|' NULL '';
 
 CREATE TABLE mortgage_rates (
   month date PRIMARY KEY,
@@ -219,7 +219,7 @@ CREATE TABLE mortgage_rates (
   zero_point_rate numeric
 );
 
-COPY mortgage_rates FROM '../data/pmms.csv' DELIMITER ',' NULL '';
+COPY mortgage_rates FROM 'data/pmms.csv' DELIMITER ',' NULL '';
 
 CREATE TABLE raw_msa_county_mappings (
   cbsa_code integer,
@@ -237,4 +237,4 @@ CREATE TABLE raw_msa_county_mappings (
   state_abbreviation varchar
 );
 
-COPY raw_msa_county_mappings FROM '../data/msa_county_mapping.csv' NULL '' CSV HEADER;
+COPY raw_msa_county_mappings FROM 'data/msa_county_mapping.csv' NULL '' CSV HEADER;
